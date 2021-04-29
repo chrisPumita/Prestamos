@@ -17,14 +17,15 @@
    		public function obtener_vistas_controlador()
    		{
    			# views es el configurado en htaccess
-   			if (isset($_GET['views'])) {
-   				$ruta = explode("/",$_GET['views']);
-   				$respuesta = vistasModelo::obtener_vistas_modelo($ruta[0]);
-   			}
+            if(isset($_GET['views'])) {
+                $ruta = explode("/", $_GET['views']);
+                $respuesta = vistaModelo::obtener_vistas_modelo($ruta[0]);
+            }
    			else
    			{
    				#No viene definia la variable views
    				$respuesta = "login";
+                echo "No econtramos";
    			}
    			return $respuesta;
    		}

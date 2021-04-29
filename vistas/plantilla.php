@@ -7,6 +7,24 @@
     <?php include "./vistas/inc/Link.php";?>
 </head>
 <body>
+    <?php
+    #Enviar datos mediante Ajax
+        $peticionAjax = false;
+        require_once "./controladores/vistasControlador.php";
+        #Definimos una nueva instancia de vista
+        $IV = new vistasControlador();
+        #Nombre de la vista que se va a mostyrar
+        $vistas =  $IV->obtener_vistas_controlador();
+        #verificamos si es un login o 404
+        if ($vistas=="login"||$vistas=="404")
+        {
+            #Mostramos la vistas
+            require_once "./vistas/contenidos/".$vistas."-view.php";
+        }
+        else
+        {
+            #Star else que imprime Main Container
+    ?>
 	
 	<!-- Main container -->
 	<main class="full-box main-container">
@@ -19,6 +37,9 @@
 			
 		</section>
 	</main>
-    <?php include "./vistas/inc/Script.php";?>
+    <?php
+            #End else
+        }
+    include "./vistas/inc/Script.php";?>
 </body>
 </html>
