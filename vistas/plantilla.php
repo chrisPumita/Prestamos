@@ -33,7 +33,11 @@
 		<!-- Page content -->
 		<section class="full-box page-content">
 
-            <?php include "./vistas/inc/NavBar.php";?>
+            <?php
+            include "./vistas/inc/NavBar.php";
+            #Mostramo la vista principal
+            include $vistas;
+            ?>
 			
 		</section>
 	</main>

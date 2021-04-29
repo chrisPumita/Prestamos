@@ -25,7 +25,6 @@
    			{
    				#No viene definia la variable views
    				$respuesta = "login";
-                echo "No econtramos";
    			}
    			return $respuesta;
    		}
