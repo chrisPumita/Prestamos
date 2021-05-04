@@ -22,7 +22,10 @@
 </div>
 
 <div class="container-fluid">
-    <form action="" class="form-neon" autocomplete="off">
+    <!--Agregando la clase general al formulario para enviar datos via AJAX
+    data-form va a enviar un identificador de tipo de accion que se va  a realizar
+    delete-eliminar; save-guardar-->
+    <form class="form-neon FormularioAjax" action="" method="POST" data-form="save" autocomplete="off">
         <fieldset>
             <legend><i class="far fa-address-card"></i> &nbsp; Información personal</legend>
             <div class="container-fluid">
