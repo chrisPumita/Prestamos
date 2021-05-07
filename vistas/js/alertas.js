@@ -15,7 +15,7 @@ function enviar_formulario_ajax(e) {
     //array de datos jsno tiene la conf que se enviara por fetch
     let config = {
         method: method,
-        headers:encabezados,
+        headers: encabezados,
         mode: 'cors',
         cache: 'no-cache',
         body: data
@@ -23,18 +23,18 @@ function enviar_formulario_ajax(e) {
 
     //definir el tipo de mje que se enviara
     let texto_alerta;
-    if (tipo==="save"){
-        texto_alerta = "Los datos quedaran guardados en el sistema";
-    } else if (tipo==="delete"){
-        texto_alerta = "Los datos seran eliminados completamente del sistema";
-    } else if (tipo === "update"){
-        texto_alerta = "Los datos del sistema serán actualizados";
-    } else if (tipo === "search"){
-        texto_alerta = "Se eliminará el termino de busqueda y tendras que escribir uno nuevo";
-    } else if (tipo === "loans"){
-        texto_alerta = "¿Desea remover los datos seleccionados para prestamos o reservaciones?";
-    } else {
-        texto_alerta = "¿Quieres realizar la operación solicitada?";
+    if(tipo==="save"){
+        texto_alerta="Los datos quedaran guardados en el sistema";
+    }else if(tipo==="delete"){
+        texto_alerta="Los datos serán eliminados completamente del sistema";
+    }else if(tipo==="update"){
+        texto_alerta="Los datos del sistema serán actualizados";
+    }else if(tipo==="search"){
+        texto_alerta="Se eliminará el término de búsqueda y tendrás que escribir uno nuevo";
+    }else if(tipo==="loans"){
+        texto_alerta="Desea remover los datos seleccionados para préstamos o reservaciones";
+    }else{
+        texto_alerta="Quieres realizar la operación solicitada";
     }
 
     //Vamos a preguntar y si si, se refrescara la pagina
@@ -54,7 +54,7 @@ function enviar_formulario_ajax(e) {
                 .then(respuesta => respuesta.json())
                 .then(respuesta => {
                    //se ha resi respuesta
-                   return alertas_akax(respuesta);
+                   return alertas_ajax(respuesta);
                 });
         }
     });
@@ -67,7 +67,7 @@ formularios_ajax.forEach(formularios =>{
 });
 
 //recibir JSON o arreglo de datos
-function alertas_akax(alerta) {
+function alertas_ajax(alerta) {
     //Accedemos al indicellamado Alterta que trae el tipo de alerta que vamos a procesar
     if (alerta.Alerta==="simple") {
         //plugin de sweetalert
